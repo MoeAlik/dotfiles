@@ -1,4 +1,0 @@
-system = "Darwin Mac"
-
-[files]
-aerospace = "aerospace.toml"

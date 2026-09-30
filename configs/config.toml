@@ -1,0 +1,3 @@
+[aerospace]
+path = "~/.config/aerospace/aerospace.toml"
+systems = ["Darwin"]
