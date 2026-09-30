@@ -32,7 +32,7 @@ def link(path)
     if File.exist?(project_path)
         FileUtils.remove_file(project_path)
     end
-    File.symlink(path, project_path)
+    File.link(path, project_path)
 end
 
 def load
