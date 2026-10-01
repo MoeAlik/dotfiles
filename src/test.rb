@@ -4,6 +4,8 @@ require 'fileutils'
 require 'optparse'
 require "toml-rb"
 
+$files_path = "files"
+
 $options = {}
 $system
 $config
@@ -19,6 +21,10 @@ def setup_args
             $options[:load_action] = true
         end
 
+        opts.on("-c", "--clean", "Clean up untagged files") do |v|
+            $options[:clean_action] = true
+        end
+        
     end.parse!
 end 
 
@@ -28,7 +34,8 @@ def get_toml_object
 end
 
 def link(path)
-    project_path = "files/#{File.basename(path)}"
+    # is there a ruby path abstraction?
+    project_path = "#{$files_path}/#{File.basename(path)}"
     if File.exist?(project_path)
         FileUtils.remove_file(project_path)
     end
@@ -53,9 +60,28 @@ def load
     end
 end
 
+def clean
+    ignore_list = [".", "..", ".gitkeep"]
+    tracked_files = $config
+        .map {|k, v| File.basename(v["path"])}
+    untracked_files = Dir.entries($files_path)
+        .reject {|f| ignore_list.include?(f)}
+        .reject{ |f| tracked_files.include?(f)}
+
+    untracked_files.each do |f|
+        p "removing untracked file #{f}"
+        FileUtils.remove_file("#{$files_path}/#{f}")
+    end
+end
+
 def handle_args
     if $options[:load_action]
         load
+        return
+    end
+
+    if $options[:clean_action]
+        clean
         return
     end
 

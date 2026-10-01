@@ -1,3 +1,15 @@
 [aerospace]
 path = "~/.config/aerospace/aerospace.toml"
 systems = ["Darwin"]
+
+[zprofile]
+path = "~/.zprofile"
+systems = ["Darwin"]
+
+[gitconfig]
+path = "~/.gitconfig"
+systems = ["Darwin"]
+
+[simple-bar]
+path = "~/.config/ubersicht/widgets/simple-bar/.simplebarrc"
+systems = ["Darwin"]
