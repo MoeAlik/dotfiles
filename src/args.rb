@@ -1,0 +1,2 @@
+$parser = OptionParser.new
+$options = {}

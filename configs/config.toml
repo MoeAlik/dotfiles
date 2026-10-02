@@ -1,15 +1,19 @@
 [aerospace]
 path = "~/.config/aerospace/aerospace.toml"
+project_file = "aerospace.toml"
 systems = ["Darwin"]
 
 [zprofile]
 path = "~/.zprofile"
+project_file = "zprofile"
 systems = ["Darwin"]
 
 [gitconfig]
 path = "~/.gitconfig"
+project_file = "gitconfig"
 systems = ["Darwin"]
 
 [simple-bar]
 path = "~/.config/ubersicht/widgets/simple-bar/.simplebarrc"
+project_file = "simplebarrc"
 systems = ["Darwin"]
