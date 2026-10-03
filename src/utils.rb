@@ -11,3 +11,9 @@ def link(path)
   end
   File.link(path, project_path)
 end
+
+def get_tracked_paths
+  $config
+    .select { |k, v| v["systems"].include?($system) }
+    .map { |_, v| v["path"] }
+end
