@@ -16,7 +16,8 @@ $system
 $config
 
 $BANNER = <<~HEREDOC
-  dotfiles manager
+  dotfiles manager - moealik
+
 HEREDOC
 
 def run

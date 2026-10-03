@@ -2,6 +2,9 @@ module Load
   extend self
 
   def register
+    $parser.on("-l", "--load", "Load tracked files into project.") do |v|
+      $options[:load] = load
+    end
   end
 
   def load
