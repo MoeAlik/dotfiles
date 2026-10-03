@@ -1,3 +1,7 @@
 [user]
 	name = MoeAlik
 	email = moegame1123@gmail.com
+[core]
+	editor = vim
+[credential]
+	helper = store

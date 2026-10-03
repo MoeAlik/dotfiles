@@ -11,9 +11,14 @@ systems = ["Darwin"]
 [gitconfig]
 path = "~/.gitconfig"
 project_file = "gitconfig"
-systems = ["Darwin"]
+systems = ["Darwin", "Linux"]
 
 [simple-bar]
 path = "~/.config/ubersicht/widgets/simple-bar/.simplebarrc"
 project_file = "simplebarrc"
 systems = ["Darwin"]
+
+[bashrc]
+path = "~/.bashrc"
+project_file = "bashrc"
+systems = ["Linux"]
