@@ -16,7 +16,7 @@ systems = ["Darwin", "Linux"]
 [simple-bar]
 path = "~/.config/ubersicht/widgets/simple-bar/.simplebarrc"
 project_file = "simplebarrc"
-systems = ["Darwin"]
+systems = []
 
 [bashrc]
 path = "~/.bashrc"

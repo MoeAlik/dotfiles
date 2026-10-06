@@ -3,6 +3,7 @@ require "pp"
 require "fileutils"
 require "optparse"
 require "toml-rb"
+require "pathname"
 
 require_relative "args"
 require_relative "utils"

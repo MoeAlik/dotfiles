@@ -8,5 +8,7 @@ things todo:
 - [x] trying to make adding commands ez
 - [x] formatter
 - [x] what kind of intellisense/LSP for ruby?
-- [ ] dont forget i have project files now
+- [x] dont forget i have project files now
 - [ ] changed module name to install but method is still `set`
+- [ ] git hooks?
+- [ ] github actions?
