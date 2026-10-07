@@ -5,9 +5,3 @@
 	editor = vim
 [credential]
 	helper = store
-
-
-
-
-
-
