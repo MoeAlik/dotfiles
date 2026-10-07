@@ -29,7 +29,7 @@ module Install
       end
 
       if !File.identical?(project_path, path)
-        FileUtils.cp_r(project_path, path)
+        FileUtils.cp(path, project_path, verbose: true)
       end
 
       link(setting_dictionary)

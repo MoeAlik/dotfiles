@@ -6,10 +6,12 @@ end
 def link(setting_dictionary)
   # is there a ruby path abstraction?
   project_path = "#{$files_path}/#{setting_dictionary["project_file"]}"
+  path = File.expand_path(setting_dictionary["path"])
   if File.exist?(project_path)
     FileUtils.remove_file(project_path)
   end
-  File.link(setting_dictionary["path"], project_path)
+
+  File.link(path, project_path)
 end
 
 def get_tracked_paths
