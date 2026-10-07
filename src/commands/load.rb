@@ -16,7 +16,7 @@ module Load
 
       path = File.expand_path(hash_object["path"])
       if File.exist?(path)
-        link(hash_object)
+        link_from_path(hash_object)
         puts "load: linking #{config_unit}."
       else
         puts "load: skipping #{config_unit}. Path does not exist."

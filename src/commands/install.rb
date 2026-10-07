@@ -29,10 +29,10 @@ module Install
       end
 
       if !File.identical?(project_path, path)
-        FileUtils.cp(path, project_path, verbose: true)
+        FileUtils.cp(project_path, path, verbose: true)
       end
 
-      link(setting_dictionary)
+      link_from_project(setting_dictionary)
       p "install: #{setting} set"
     end
   end

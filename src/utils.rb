@@ -3,7 +3,7 @@ def get_toml_object
   TomlRB.parse(toml_dumps)
 end
 
-def link(setting_dictionary)
+def link_from_path(setting_dictionary)
   # is there a ruby path abstraction?
   project_path = "#{$files_path}/#{setting_dictionary["project_file"]}"
   path = File.expand_path(setting_dictionary["path"])
@@ -12,6 +12,16 @@ def link(setting_dictionary)
   end
 
   File.link(path, project_path)
+end
+
+def link_from_project(setting_dictionary)
+  project_path = "#{$files_path}/#{setting_dictionary["project_file"]}"
+  path = File.expand_path(setting_dictionary["path"])
+  if File.exist?(path)
+    FileUtils.remove_file(path)
+  end
+
+  File.link(project_path, path)
 end
 
 def get_tracked_paths
