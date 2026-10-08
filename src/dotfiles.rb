@@ -36,6 +36,7 @@ def main
   $system = Etc.uname[:sysname]
   $config = get_toml_object
   $parser.banner = $BANNER
+  system("git", "config", "core.hooksPath", ".githooks")
 
   run
 end
