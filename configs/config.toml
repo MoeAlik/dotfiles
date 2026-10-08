@@ -22,3 +22,8 @@ systems = ["Darwin"]
 path = "~/.bashrc"
 project_file = "bashrc"
 systems = ["Linux"]
+
+[sketchybar]
+path = "~/.config/sketchybar/sketchybarrc"
+project_file = "sketchybarrc"
+systems = ["Darwin"]
