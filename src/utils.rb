@@ -24,6 +24,14 @@ def link_from_project(setting_dictionary)
   File.link(project_path, path)
 end
 
+def get_tracked_settings
+  $config
+    .map { |_, dict| dict }
+    .flatten
+    .select { |dict| on_system?(dict) }
+    .select { |dit| dict["path"] }
+end
+
 def get_tracked_paths
   $config
     .select { |k, v| v["systems"].include?($system) }

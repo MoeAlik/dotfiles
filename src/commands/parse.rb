@@ -2,7 +2,6 @@ module Parse
   extend self
 
   @@required_fields = [
-    "path",
     "project_file",
     "systems"
   ]

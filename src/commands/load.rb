@@ -10,8 +10,12 @@ module Load
   def load
     $config.each do |config_unit, hash_object|
       if !hash_object["systems"].include?($system)
-        puts "load: skiping #{config_unit}. Incompatible system."
+        puts "load: skipping #{config_unit}. Incompatible system."
         next
+      end
+
+      if !hash_object["path"]
+        puts "load: skipping #{config_unit}. Group has no path"
       end
 
       path = File.expand_path(hash_object["path"])

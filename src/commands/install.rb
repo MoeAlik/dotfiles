@@ -14,6 +14,10 @@ module Install
         next
       end
 
+      if !setting_dictionary["path"]
+        puts "install: skipping #{setting}. Group has no path."
+      end
+
       path_str = File.expand_path(setting_dictionary["path"])
       project_path_str = get_project_path(setting_dictionary)
 

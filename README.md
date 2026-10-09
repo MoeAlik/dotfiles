@@ -13,3 +13,7 @@ things todo:
 - [x] git hooks?
 - [ ] github actions?
 - [ ] logger class to space out text evenly etc
+- [ ] can toml setting groups have custom commands?
+- [ ] do i unflatted project files?
+- [ ] each machine needs a different path for smth like vscode, need to store more logic for profiles
+- [ ] get rid of globals

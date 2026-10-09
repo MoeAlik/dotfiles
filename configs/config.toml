@@ -27,3 +27,12 @@ systems = ["Linux"]
 path = "~/.config/sketchybar/sketchybarrc"
 project_file = "sketchybarrc"
 systems = ["Darwin"]
+
+[vscode.settings]
+path = "~/Library/Application Support/Code/User/settings.json"
+project_file = "vscode_settings.json"
+systems = ["Linux", "Darwin"]
+
+[vscode.extensions]
+project_file = "vscode_extensions"
+systems = ["Linux", "Darwin"]
