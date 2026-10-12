@@ -8,7 +8,7 @@ module Load
   end
 
   def load
-    $config.each do |config_unit, hash_object|
+    $config.flat_map do |config_unit, hash_object|
       if !hash_object["systems"].include?($system)
         puts "load: skipping #{config_unit}. Incompatible system."
         next

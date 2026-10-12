@@ -30,9 +30,9 @@ systems = ["Darwin"]
 
 [vscode.settings]
 path = "~/Library/Application Support/Code/User/settings.json"
-project_file = "vscode_settings.json"
+project_file = "vscode/settings.json"
 systems = ["Linux", "Darwin"]
 
 [vscode.extensions]
-project_file = "vscode_extensions"
+project_file = "vscode/extensions"
 systems = ["Linux", "Darwin"]

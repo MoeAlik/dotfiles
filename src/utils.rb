@@ -51,3 +51,21 @@ end
 def on_system?(setting_dictionary)
   setting_dictionary["systems"].include?($system)
 end
+
+def leaf_dictionary?(input_dictionary)
+  input_dictionary.values.none? { |v| v.is_a?(Hash) }
+end
+
+class Hash
+  def flat_keys
+    each do |k, v|
+      if leaf_dictionary?(v)
+        yield(k, v)
+      else
+        v.flat_keys do |k1, v2|
+          yield(k1, v2)
+        end
+      end
+    end
+  end
+end
