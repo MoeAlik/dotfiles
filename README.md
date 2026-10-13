@@ -18,3 +18,4 @@ things todo:
 - [ ] each machine needs a different path for smth like vscode, need to store more logic for profiles
 - [ ] get rid of globals
 - [ ] hard coding strings everywhere, I want to use reserved const vars when hashing from config. can store this stuff into a special class instead of a global hash
+- [ ] can use branches for the pathnames and keep everything else consistent

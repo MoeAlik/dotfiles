@@ -1,0 +1,3 @@
+#!/bin/sh
+set -exuo pipefail
+code --list-extensions > files/vscode/extensions.txt

@@ -1,40 +1,57 @@
 [aerospace]
-path = "~/.config/aerospace/aerospace.toml"
-project_file = "aerospace.toml"
 systems = ["Darwin"]
+
+[[aerospace.files]]
+path = "~/.config/aerospace/aerospace.toml"
+project_path = "aerospace.toml"
 
 [zprofile]
-path = "~/.zprofile"
-project_file = "zprofile"
 systems = ["Darwin"]
+
+[[zprofile.files]]
+path = "~/.zprofile"
+project_path = "zprofile"
 
 [gitconfig]
-path = "~/.gitconfig"
-project_file = "gitconfig"
 systems = ["Darwin", "Linux"]
 
+[[gitcofig.files]]
+path = "~/.gitconfig"
+project_path = "gitconfig"
+
 [simple-bar]
-path = "~/.config/ubersicht/widgets/simple-bar/.simplebarrc"
-project_file = "simplebarrc"
 systems = ["Darwin"]
+
+[[simple-bar.files]]
+path = "~/.config/ubersicht/widgets/simple-bar/.simplebarrc"
+project_path = "simplebarrc"
 
 [bashrc]
-path = "~/.bashrc"
-project_file = "bashrc"
 systems = ["Linux"]
 
+[[bashrc.files]]
+path = "~/.bashrc"
+project_path = "bashrc"
+
 [sketchybar]
-path = "~/.config/sketchybar/sketchybarrc"
-project_file = "sketchybarrc"
 systems = ["Darwin"]
 
-[vscode.settings]
+[[sketchybar.files]]
+path = "~/.config/sketchybar/sketchybarrc"
+project_path = "sketchybarrc"
+
+[vscode]
+systems = ["Linux", "Darwin"]
+
+[[vscode.files]]
 path = "~/Library/Application Support/Code/User/settings.json"
-project_file = "vscode/settings.json"
-systems = ["Linux", "Darwin"]
+project_path = "vscode/settings.json"
 
-[vscode.extensions]
-project_file = "vscode/extensions.txt"
-systems = ["Linux", "Darwin"]
+[[vscode.files]]
+project_path = "vscode/extensions.txt"
 
-[vscode.]
+[[vscode.commands]]
+path = "vscode/install"
+
+[[vscode.commands]]
+path = "vscode/load"
