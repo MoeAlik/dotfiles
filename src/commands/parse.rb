@@ -2,8 +2,7 @@ module Parse
   extend self
 
   @@required_fields = [
-    "project_file",
-    "systems"
+    "project_file"
   ]
 
   def register

@@ -34,5 +34,7 @@ project_file = "vscode/settings.json"
 systems = ["Linux", "Darwin"]
 
 [vscode.extensions]
-project_file = "vscode/extensions"
+project_file = "vscode/extensions.txt"
 systems = ["Linux", "Darwin"]
+
+[vscode.]
