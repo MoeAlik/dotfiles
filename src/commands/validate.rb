@@ -10,28 +10,44 @@ module Validate
   end
 
   def validate
-    $config.each do |setting, v|
-      if !on_system?(v)
+    $config.each do |setting, config_types|
+      if !on_system?(config_types)
         next
       end
 
-      path = File.expand_path(v["path"])
-      project_path = get_project_path(v)
+      file_settings = []
 
-      path_result = File.exist?(path) ? "Found" : "Missing"
-      project_path_result = File.exist?(project_path) ? "Found" : "Missing"
-
-      if [path_result, project_path_result].include?("Missing")
-        p "#{setting}: path: #{path_result}, project_path: #{project_path_result}"
-        next
+      if config_types.include?("files")
+        file_settings.concat(config_types["files"])
       end
 
-      if !File.identical?(path, project_path)
-        p "#{setting}: file and project file do not agree"
-        next
+      if config_types.include?("commands")
+        file_settings.concat(config_types["commands"])
       end
 
-      p "#{setting}: verified"
+      file_settings.each do |v|
+        project_path = get_project_path(v)
+
+        if !File.exist?(project_path)
+          p "#{setting} missing project_path."
+        end
+
+        if !v.include?("path")
+          next
+        end
+
+        path = File.expand_path(v["path"])
+        if !File.exist?(path)
+          p "#{settign} missing path."
+        end
+
+        if !File.identical?(path, project_path)
+          p "#{setting}: file and project file do not agree"
+          next
+        end
+
+        p "#{setting}: verified"
+      end
     end
   end
 end

@@ -5,7 +5,7 @@ end
 
 def link_from_path(setting_dictionary)
   # is there a ruby path abstraction?
-  project_path = "#{$files_path}/#{setting_dictionary["project_file"]}"
+  project_path = "#{$files_path}/#{setting_dictionary["project_path"]}"
   path = File.expand_path(setting_dictionary["path"])
   if File.exist?(project_path)
     FileUtils.remove_file(project_path)
@@ -15,21 +15,13 @@ def link_from_path(setting_dictionary)
 end
 
 def link_from_project(setting_dictionary)
-  project_path = "#{$files_path}/#{setting_dictionary["project_file"]}"
+  project_path = "#{$files_path}/#{setting_dictionary["project_path"]}"
   path = File.expand_path(setting_dictionary["path"])
   if File.exist?(path)
     FileUtils.remove_file(path)
   end
 
   File.link(project_path, path)
-end
-
-def get_tracked_settings
-  $config
-    .map { |_, dict| dict }
-    .flatten
-    .select { |dict| on_system?(dict) }
-    .select { |dit| dict["path"] }
 end
 
 def get_tracked_paths
@@ -44,12 +36,18 @@ def get_tracked_paths_internal
     .map { |_, v| "#{$files_path}/#{File.basename(v["path"])}" }
 end
 
+def get_tracked_settings
+  $config
+    .select { |k, v| v.assoc("setting") and v["systems"].include?($system) }
+end
+
 def get_project_path(setting_dictionary)
-  "#{$files_path}/#{setting_dictionary["project_file"]}"
+  "#{$files_path}/#{setting_dictionary["project_path"]}"
 end
 
 def on_system?(setting_dictionary)
-  setting_dictionary["systems"].include?($system)
+  !setting_dictionary.include?("systems") or
+    setting_dictionary["systems"].include?($system)
 end
 
 def leaf_dictionary?(input_dictionary)

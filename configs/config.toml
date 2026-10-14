@@ -51,7 +51,7 @@ project_path = "vscode/settings.json"
 project_path = "vscode/extensions.txt"
 
 [[vscode.commands]]
-path = "vscode/install"
+project_path = "vscode/install"
 
 [[vscode.commands]]
-path = "vscode/load"
+project_path = "vscode/load"
