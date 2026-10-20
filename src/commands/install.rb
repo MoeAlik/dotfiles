@@ -7,6 +7,32 @@ module Install
     end
   end
 
+  def install_file(setting, setting_dictionary)
+    if !setting_dictionary["path"]
+      puts "install: skipping #{setting}. Group has no path."
+      return
+    end
+
+    path_prefix = Pathname.new("files/#{setting}")
+    project_path = path_prefix / setting_dictionary["project_path"]
+    path = Pathname.new(setting_dictionary["path"])
+
+    if !File.exist?(project_path)
+      puts "install: project file does not exist."
+    end
+
+    if !File.exist?(path.parent)
+      FileUtils.mkdir_p(path.parent)
+    end
+
+    if !File.identical?(project_path, path)
+      FileUtils.cp(project_path, path, verbose: true)
+    end
+
+    link_from_project(project_path, path)
+    puts "install: #{setting} set"
+  end
+
   def install
     $config.each do |setting, setting_dictionary|
       if !on_system?(setting_dictionary)
@@ -14,30 +40,15 @@ module Install
         next
       end
 
-      if !setting_dictionary["path"]
-        puts "install: skipping #{setting}. Group has no path."
+      setting_dictionary.fetch("files", []).each do |file_dict|
+        install_file(setting, file_dict)
       end
 
-      path_str = File.expand_path(setting_dictionary["path"])
-      project_path_str = get_project_path(setting_dictionary)
-
-      path = Pathname.new(path_str)
-      project_path = Pathname.new(project_path_str)
-
-      if !File.exist?(project_path)
-        puts "install: project file does not exist."
+      setting_dictionary.fetch("path", []).each do |command_dict|
+        p command_dict
       end
 
-      if !File.exist?(path.parent)
-        FileUtils.mkdir_p(path.parent)
-      end
-
-      if !File.identical?(project_path, path)
-        FileUtils.cp(project_path, path, verbose: true)
-      end
-
-      link_from_project(setting_dictionary)
-      p "install: #{setting} set"
+      next
     end
   end
 end

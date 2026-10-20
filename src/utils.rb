@@ -14,9 +14,7 @@ def link_from_path(setting_dictionary)
   File.link(path, project_path)
 end
 
-def link_from_project(setting_dictionary)
-  project_path = "#{$files_path}/#{setting_dictionary["project_path"]}"
-  path = File.expand_path(setting_dictionary["path"])
+def link_from_project(project_path, path)
   if File.exist?(path)
     FileUtils.remove_file(path)
   end

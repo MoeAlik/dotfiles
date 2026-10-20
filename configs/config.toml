@@ -15,7 +15,7 @@ project_path = "zprofile"
 [gitconfig]
 systems = ["Darwin", "Linux"]
 
-[[gitcofig.files]]
+[[gitconfig.files]]
 path = "~/.gitconfig"
 project_path = "gitconfig"
 
@@ -45,13 +45,13 @@ systems = ["Linux", "Darwin"]
 
 [[vscode.files]]
 path = "~/Library/Application Support/Code/User/settings.json"
-project_path = "vscode/settings.json"
+project_path = "settings.json"
 
 [[vscode.files]]
-project_path = "vscode/extensions.txt"
+project_path = "extensions.txt"
 
 [[vscode.commands]]
-project_path = "vscode/install"
+project_path = "install"
 
 [[vscode.commands]]
-project_path = "vscode/load"
+project_path = "load"
