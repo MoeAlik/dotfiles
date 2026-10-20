@@ -38,7 +38,7 @@ module Validate
 
         path = File.expand_path(v["path"])
         if !File.exist?(path)
-          p "#{settign} missing path."
+          p "#{setting} missing path."
         end
 
         if !File.identical?(path, project_path)

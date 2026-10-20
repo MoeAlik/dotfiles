@@ -15,10 +15,10 @@ module Install
 
     path_prefix = Pathname.new("files/#{setting}")
     project_path = path_prefix / setting_dictionary["project_path"]
-    path = Pathname.new(setting_dictionary["path"])
+    path = Pathname.new(File.expand_path(setting_dictionary["path"]))
 
     if !File.exist?(project_path)
-      puts "install: project file does not exist."
+      puts "install: project file does not exist.3"
     end
 
     if !File.exist?(path.parent)
