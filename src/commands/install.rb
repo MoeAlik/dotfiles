@@ -18,7 +18,7 @@ module Install
     path = Pathname.new(File.expand_path(setting_dictionary["path"]))
 
     if !File.exist?(project_path)
-      puts "install: project file does not exist.3"
+      puts "install: project file does not exist."
     end
 
     if !File.exist?(path.parent)
@@ -47,8 +47,6 @@ module Install
       setting_dictionary.fetch("path", []).each do |command_dict|
         p command_dict
       end
-
-      next
     end
   end
 end
