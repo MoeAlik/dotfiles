@@ -1,0 +1,14 @@
+[
+  {
+    "id": "11758c94-4c6a-47d9-a6d4-02f774d10c95",
+    "title": "dump",
+    "description": "dump to dump, it took too long to fucking find this",
+    "vaultName": "brain",
+    "path": "Mind/dump",
+    "type": "capture",
+    "template": "{content}",
+    "mode": "append",
+    "heading": "",
+    "silent": true
+  }
+]

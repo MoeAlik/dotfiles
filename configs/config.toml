@@ -55,3 +55,9 @@ project_path = "install"
 
 [[vscode.commands]]
 project_path = "load"
+
+[raycast]
+systems = ["Darwin"]
+
+[[raycast.files]]
+project_path = "quicklinks.json"
