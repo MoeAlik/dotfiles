@@ -1,7 +1,7 @@
 going to start adding all my configs in one place
 
 things todo:
-- [ ] support dir configs instead of one off files (think of vscode)
+- [x] support dir configs instead of one off files (think of vscode)
 - [ ] adding color to pretty printing
 - [x] more commands
 - [ ] rake?
@@ -13,9 +13,10 @@ things todo:
 - [x] git hooks?
 - [ ] github actions?
 - [ ] logger class to space out text evenly etc
-- [ ] can toml setting groups have custom commands?
+- [x] can toml setting groups have custom commands?
 - [ ] do i unflatted project files?
 - [ ] each machine needs a different path for smth like vscode, need to store more logic for profiles
 - [ ] get rid of globals
 - [ ] hard coding strings everywhere, I want to use reserved const vars when hashing from config. can store this stuff into a special class instead of a global hash
 - [ ] can use branches for the pathnames and keep everything else consistent
+- [ ] can we make any of this config driven?

@@ -65,3 +65,17 @@ class Hash
     end
   end
 end
+
+def run_action_from_project(setting_dir, action)
+  action_path = Pathname.new($files_path) / setting_dir / action
+
+  if !File.exist?(action_path)
+    nil
+  end
+
+  success = system("./#{action_path}")
+
+  if !success
+    raise "#{action_path} failed to exec #{action}"
+  end
+end
