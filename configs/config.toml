@@ -61,3 +61,10 @@ systems = ["Darwin"]
 
 [[raycast.files]]
 project_path = "quicklinks.json"
+
+[clang-format]
+systems = ["Darwin", "Linux"]
+
+[[clang-format.files]]
+path = "~/.clang-format"
+project_path = "clang-format"

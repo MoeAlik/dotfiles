@@ -8,6 +8,10 @@ module Load
   end
 
   def load_file(setting, setting_dictionary)
+
+    p setting
+    p setting_dictionary
+
     if !setting_dictionary["path"]
       puts "load: skipping #{setting}. Group has no path."
       return
@@ -26,10 +30,10 @@ module Load
     end
 
     if File.exist?(path)
-      link_from_path(hash_object)
-      puts "load: linking #{config_unit}."
+      link_from_path(path, project_path)
+      puts "load: linking #{setting}."
     else
-      puts "load: skipping #{config_unit}. Path does not exist."
+      puts "load: skipping #{setting}. Path does not exist."
     end
   end
 
@@ -41,7 +45,7 @@ module Load
       end
 
       setting_dictionary.fetch("files", []).each do |file_dict|
-        load_file(setting, setting_dictionary)
+        load_file(setting, file_dict)
       end
 
       setting_dictionary.fetch("path", []).each do |command_dict|

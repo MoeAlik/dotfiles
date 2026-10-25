@@ -20,3 +20,8 @@ things todo:
 - [ ] hard coding strings everywhere, I want to use reserved const vars when hashing from config. can store this stuff into a special class instead of a global hash
 - [ ] can use branches for the pathnames and keep everything else consistent
 - [ ] can we make any of this config driven?
+- [ ] prety print the spacing when it comes to githooks
+- [ ] clangformat is standalone but it could be semantically grouped with other cpp configs
+- [ ] is parse really doing anything, it should be a pre-action check that makes sure everything is fine. i should be using it to sanity check adding clang format without issue
+- [ ] should start thinking about testing too
+- [ ] i dont want to manually edit the toml to add something, it should be apart of the CLI??
