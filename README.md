@@ -25,3 +25,4 @@ things todo:
 - [ ] is parse really doing anything, it should be a pre-action check that makes sure everything is fine. i should be using it to sanity check adding clang format without issue
 - [ ] should start thinking about testing too
 - [ ] i dont want to manually edit the toml to add something, it should be apart of the CLI??
+- [ ] githooks didnt work on pc prob cuz no perms
