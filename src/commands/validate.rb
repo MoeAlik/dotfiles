@@ -1,9 +1,8 @@
 require_relative "../utils"
+require_relative "../command"
 
-module Validate
-  extend self
-
-  def register
+class Validate < Command
+  def self.register
     $parser.on("-v", "--validate", "Validate tracked project files agree with system.") do |v|
       $options[:validate] = validate
     end
