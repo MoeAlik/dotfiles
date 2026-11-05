@@ -1,7 +1,7 @@
 require_relative "../command"
 
 class Test < Command
-  def register
+  def self.register
   end
 end
 

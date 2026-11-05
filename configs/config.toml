@@ -68,3 +68,9 @@ systems = ["Darwin", "Linux"]
 [[clang-format.files]]
 path = "~/.clang-format"
 project_path = "clang-format"
+
+[fish]
+
+[[fish.files]]
+project_path = "config.fish"
+path = "~/.config/fish/config.fish"

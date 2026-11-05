@@ -8,7 +8,7 @@ class Validate < Command
     end
   end
 
-  def validate
+  def self.validate
     $config.each do |setting, config_types|
       if !on_system?(config_types)
         next
@@ -29,6 +29,7 @@ class Validate < Command
 
         if !File.exist?(project_path)
           p "#{setting} missing project_path."
+          next
         end
 
         if !v.include?("path")
@@ -39,6 +40,9 @@ class Validate < Command
         if !File.exist?(path)
           p "#{setting} missing path."
         end
+
+        p path
+        p project_path
 
         if !File.identical?(path, project_path)
           p "#{setting}: file and project file do not agree"
