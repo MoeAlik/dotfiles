@@ -12,6 +12,8 @@ module Parse
   end
 
   def parse
+    raise 1
+
     $config.each do |setting, config_types|
       file_settings = []
 
